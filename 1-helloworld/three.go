@@ -30,14 +30,23 @@ func loops() (output string) {
 }
 
 func ifs() (output string) {
-	sum := 5
-	if sum == 5 {
-		output += "blubb\n"
-	}	
+	sum := 0
+	for sum < 10 {
+		sum++
+		if sum % 2 == 1 {
+			output += "blubb\n"
+		} else {
+			output += "tick\n"
+		}
+	}
 
-	if v := math.Pow(2,2); v < 8 {
+	if v := math.Pow(2,2); v < 4 {
+		output += fmt.Sprintf("%v\n", v)
+	} else {
+		v = v-1; // can use v here
 		output += fmt.Sprintf("%v\n", v)
 	}
+	// can't use v here, only valid in scope of the if-else statement 
 	return
 }
 
